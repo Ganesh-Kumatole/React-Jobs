@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 const HomeCard = (props) => {
   const { label } = props;
 
@@ -16,8 +18,8 @@ const HomeCard = (props) => {
             ? 'Browse our React jobs and start your career today'
             : 'List your job to find the perfect developer for the role'}
         </p>
-        <a
-          href="/jobs.html"
+        <Link
+          to={label == 'developer' ? '/jobs' : '/add-job'}
           className={`inline-block text-white rounded-lg px-4 py-2 ${
             label == 'developer'
               ? 'hover:bg-gray-700 bg-black'
@@ -25,7 +27,7 @@ const HomeCard = (props) => {
           }`}
         >
           {label == 'developer' ? 'Browse Jobs' : 'Add Job'}
-        </a>
+        </Link>
       </div>
     </>
   );

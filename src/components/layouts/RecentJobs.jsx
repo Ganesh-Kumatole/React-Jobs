@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import JobCard from '../common/JobCard';
 import jobsJSON from '../../jobs.json';
 
@@ -16,6 +17,7 @@ const RecentJobs = () => {
               ({ id, type, title, description, salary, location }) => (
                 <JobCard
                   key={id}
+                  id={id}
                   type={type}
                   role={title}
                   desc={description}
@@ -29,12 +31,12 @@ const RecentJobs = () => {
       </section>
 
       <section className="m-auto max-w-lg my-10 px-6">
-        <a
-          href="jobs.html"
+        <Link
+          to="/jobs"
           className="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
         >
           View All Jobs
-        </a>
+        </Link>
       </section>
     </>
   );

@@ -13,6 +13,7 @@ const AllJobs = () => {
           {allJobs.map(({ id, type, title, description, salary, location }) => (
             <JobCard
               key={id}
+              id={id}
               type={type}
               role={title}
               desc={description}
