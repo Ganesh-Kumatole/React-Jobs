@@ -1,7 +1,7 @@
 import JobCard from '../common/JobCard';
 import jobsJSON from '../../jobs.json';
 
-const JobListings = () => {
+const RecentJobs = () => {
   const recentJobs = jobsJSON.jobs.slice(0, 3);
 
   return (
@@ -40,4 +40,4 @@ const JobListings = () => {
   );
 };
 
-export default JobListings;
+export default RecentJobs;
