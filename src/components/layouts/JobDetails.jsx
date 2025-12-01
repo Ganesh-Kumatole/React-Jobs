@@ -1,14 +1,22 @@
-import { useParams, Link } from 'react-router';
+import { useParams, useNavigate, Link } from 'react-router';
 import { ClipLoader } from 'react-spinners';
 import useFetchJob from '../../hooks/useFetchJob';
 import { FaArrowLeft, FaLocationDot } from 'react-icons/fa6';
 
-const JobDetails = () => {
+const JobDetails = ({ deleteJob }) => {
   // Obtain the jobID
   const { id } = useParams();
+  const navigate = useNavigate();
 
   // Obtain specific job-details
   const { job, isFetching } = useFetchJob(id);
+
+  const handleDelete = async () => {
+    if (!window.confirm('Delete it Permanently?')) return;
+
+    await deleteJob(id);
+    navigate('/');
+  };
 
   return (
     <>
@@ -93,11 +101,14 @@ const JobDetails = () => {
                     <h3 className="text-xl font-bold mb-6">Manage Job</h3>
                     <a
                       href="/add-job.html"
-                      className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+                      className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block hover:cursor-pointer"
                     >
                       Edit Job
                     </a>
-                    <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+                    <button
+                      className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block hover:cursor-pointer"
+                      onClick={handleDelete}
+                    >
                       Delete Job
                     </button>
                   </div>

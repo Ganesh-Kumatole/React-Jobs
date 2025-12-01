@@ -1,9 +1,54 @@
-const JobForm = () => {
+import { useState } from 'react';
+
+const JobForm = ({ addJob }) => {
+  // States for each field
+  const [jobType, setJobType] = useState('Full-Time');
+  const [jobName, setJobName] = useState('');
+  const [jobDesc, setJobDesc] = useState('');
+  const [jobSalary, setJobSalary] = useState('Under $50K');
+  const [jobLocation, setJobLocation] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const [companyDesc, setCompanyDesc] = useState('');
+  const [companyEmail, setCompanyEmail] = useState('');
+  const [companyPhone, setCompanyPhone] = useState('');
+
+  // Handler for form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newJob = {
+      title: jobName,
+      type: jobType,
+      description: jobDesc,
+      location: jobLocation,
+      salary: jobSalary,
+      company: {
+        name: companyName,
+        description: companyDesc,
+        contactEmail: companyEmail,
+        contactPhone: companyPhone,
+      },
+    };
+
+    addJob(newJob);
+
+    // Clear form fields after submission
+    setJobType('Full-Time');
+    setJobName('');
+    setJobDesc('');
+    setJobSalary('Under $50K');
+    setJobLocation('');
+    setCompanyName('');
+    setCompanyDesc('');
+    setCompanyEmail('');
+    setCompanyPhone('');
+  };
+
   return (
     <section className="bg-indigo-50">
       <div className="container m-auto max-w-2xl py-24">
         <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
-          <form>
+          <form onSubmit={handleSubmit}>
             <h2 className="text-3xl text-center font-semibold mb-6">Add Job</h2>
 
             <div className="mb-4">
@@ -17,6 +62,8 @@ const JobForm = () => {
                 id="type"
                 name="type"
                 className="border rounded w-full py-2 px-3"
+                value={jobType}
+                onChange={(e) => setJobType(e.target.value)}
                 required
               >
                 <option value="Full-Time">Full-Time</option>
@@ -35,10 +82,13 @@ const JobForm = () => {
                 id="title"
                 name="title"
                 className="border rounded w-full py-2 px-3 mb-2"
-                placeholder="eg. Beautiful Apartment In Miami"
+                placeholder="Ex: Senior React Developer"
+                value={jobName}
+                onChange={(e) => setJobName(e.target.value)}
                 required
               />
             </div>
+
             <div className="mb-4">
               <label
                 htmlFor="description"
@@ -52,6 +102,8 @@ const JobForm = () => {
                 className="border rounded w-full py-2 px-3"
                 rows="4"
                 placeholder="Add any job duties, expectations, requirements, etc"
+                value={jobDesc}
+                onChange={(e) => setJobDesc(e.target.value)}
               ></textarea>
             </div>
 
@@ -66,6 +118,8 @@ const JobForm = () => {
                 id="salary"
                 name="salary"
                 className="border rounded w-full py-2 px-3"
+                value={jobSalary}
+                onChange={(e) => setJobSalary(e.target.value)}
                 required
               >
                 <option value="Under $50K">Under $50K</option>
@@ -92,6 +146,8 @@ const JobForm = () => {
                 name="location"
                 className="border rounded w-full py-2 px-3 mb-2"
                 placeholder="Company Location"
+                value={jobLocation}
+                onChange={(e) => setJobLocation(e.target.value)}
                 required
               />
             </div>
@@ -111,6 +167,8 @@ const JobForm = () => {
                 name="company"
                 className="border rounded w-full py-2 px-3"
                 placeholder="Company Name"
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
               />
             </div>
 
@@ -127,6 +185,8 @@ const JobForm = () => {
                 className="border rounded w-full py-2 px-3"
                 rows="4"
                 placeholder="What does your company do?"
+                value={companyDesc}
+                onChange={(e) => setCompanyDesc(e.target.value)}
               ></textarea>
             </div>
 
@@ -143,9 +203,12 @@ const JobForm = () => {
                 name="contact_email"
                 className="border rounded w-full py-2 px-3"
                 placeholder="Email address for applicants"
+                value={companyEmail}
+                onChange={(e) => setCompanyEmail(e.target.value)}
                 required
               />
             </div>
+
             <div className="mb-4">
               <label
                 htmlFor="contact_phone"
@@ -159,12 +222,14 @@ const JobForm = () => {
                 name="contact_phone"
                 className="border rounded w-full py-2 px-3"
                 placeholder="Optional phone for applicants"
+                value={companyPhone}
+                onChange={(e) => setCompanyPhone(e.target.value)}
               />
             </div>
 
             <div>
               <button
-                className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+                className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline hover:cursor-pointer"
                 type="submit"
               >
                 Add Job

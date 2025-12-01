@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 function useFetchJobs() {
   // State to store response from JSON server
-  const [jobList, setJobList] = useState([]);
+  const [jobsList, setJobsList] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
 
   // Side effect of data fetching from JSON server
@@ -12,7 +12,7 @@ function useFetchJobs() {
         const response = await fetch('http://localhost:3000/jobs');
         if (!response.ok) throw new Error('Network Request Failed...');
         const data = await response.json();
-        setJobList(data);
+        setJobsList(data);
         setIsFetching(false);
       } catch (err) {
         console.error(err.message);
@@ -22,7 +22,7 @@ function useFetchJobs() {
     fetchJobs();
   }, []);
 
-  return { jobList, isFetching };
+  return { jobsList, isFetching };
 }
 
 export default useFetchJobs;

@@ -5,17 +5,17 @@ import useFetchJobs from '../../hooks/useFetchJobs';
 
 const JobListings = ({ onHomePage }) => {
   // Data fetching via useFetchJobs [custom hook]
-  const { jobList, isFetching } = useFetchJobs();
+  const { jobsList, isFetching } = useFetchJobs();
 
   // Shorten jobList for Home Page
-  const recentJobs = jobList.slice(0, 3);
+  const recentJobs = [...jobsList].reverse().slice(0, 3);
 
   return (
     <>
       <section className="bg-blue-50 px-4 py-10">
         <div className="container-xl lg:container m-auto flex flex-col justify-center items-center gap-2">
           <h2 className="text-3xl font-bold text-indigo-500 mb-6 text-center">
-            Recent Jobs
+            {onHomePage ? 'Recent Jobs' : 'Browse All Jobs'}
           </h2>
           {isFetching ? (
             <ClipLoader
@@ -41,7 +41,7 @@ const JobListings = ({ onHomePage }) => {
                       />
                     )
                   )
-                : jobList.map(
+                : jobsList.map(
                     ({ id, type, title, description, salary, location }) => (
                       <JobCard
                         key={id}
