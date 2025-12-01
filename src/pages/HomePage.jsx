@@ -1,13 +1,13 @@
 import Hero from '../components/layouts/Hero';
 import HomeCards from '../components/layouts/HomeCards';
-import RecentJobs from '../components/layouts/RecentJobs';
+import JobListings from '../components/layouts/JobListings';
 
 const HomePage = () => {
   return (
     <>
       <Hero />
       <HomeCards />
-      <RecentJobs />
+      <JobListings onHomePage={true} />
     </>
   );
 };

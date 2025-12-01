@@ -7,7 +7,7 @@ import {
 
 import Layout from './Layout';
 import HomePage from './pages/HomePage';
-import JobPage from './pages/JobPage';
+import JobsPage from './pages/JobsPage';
 import AddJobPage from './pages/AddJobPage';
 import JobDetails from './components/layouts/JobDetails';
 
@@ -17,9 +17,9 @@ const App = () => {
       <>
         <Route path="/" element={<Layout />}>
           <Route path="" element={<HomePage />} />
-          <Route path="jobs" element={<JobPage />} />
+          <Route path="jobs" element={<JobsPage />} />
           <Route path="add-job" element={<AddJobPage />} />
-          <Route path="job/:id" element={<JobDetails />} />
+          <Route path="jobs/:id" element={<JobDetails />} />
         </Route>
       </>
     )
