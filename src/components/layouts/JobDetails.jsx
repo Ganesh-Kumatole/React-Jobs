@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router';
 import { ClipLoader } from 'react-spinners';
 import useFetchJob from '../../hooks/useFetchJob';
+import { FaArrowLeft, FaLocationDot } from 'react-icons/fa6';
 
 const JobDetails = () => {
   // Obtain the jobID
@@ -16,9 +17,10 @@ const JobDetails = () => {
         <div className="container m-auto py-6 px-6">
           <Link
             to="/jobs"
-            className="w-45 text-indigo-500 hover:text-indigo-600 flex items-center"
+            className="w-45 text-indigo-500 hover:text-indigo-600 flex items-center justify-center gap-2"
           >
-            <i className="fas fa-arrow-left mr-2"></i> Back to Job Listings
+            <FaArrowLeft />
+            <p>Back to Job Listings</p>
           </Link>
         </div>
       </section>
@@ -40,8 +42,8 @@ const JobDetails = () => {
                   <div className="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
                     <div className="text-gray-500 mb-4">{job.type}</div>
                     <h1 className="text-3xl font-bold mb-4">{job.title}</h1>
-                    <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
-                      <i className="fa-solid fa-location-dot text-lg text-orange-700 mr-2"></i>
+                    <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start items-center gap-2">
+                      <FaLocationDot color="red" />
                       <p className="text-orange-700">{job.location}</p>
                     </div>
                   </div>

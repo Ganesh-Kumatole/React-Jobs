@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
+import { FaLocationDot } from 'react-icons/fa6';
 
 const JobCard = (props) => {
   const { id, type, role, desc, salary, place } = props;
@@ -30,8 +31,8 @@ const JobCard = (props) => {
           <div className="border border-indigo-200 mb-5"></div>
 
           <div className="flex flex-col lg:flex-row justify-between mb-4">
-            <div className="text-orange-700 mb-3">
-              <i className="fa-solid fa-location-dot text-lg"></i>
+            <div className="text-orange-700 mb-3 flex justify-start items-center gap-2">
+              <FaLocationDot color="red" />
               {place}
             </div>
             <Link
