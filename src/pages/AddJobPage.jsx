@@ -1,9 +1,9 @@
 import JobForm from '../components/layouts/JobForm';
 
-const AddJobPage = ({ addJob }) => {
+const AddJobPage = ({ addJob, editJob }) => {
   return (
     <>
-      <JobForm addJob={addJob} />
+      <JobForm addJob={addJob} toEdit={false} editJob={editJob} />
     </>
   );
 };

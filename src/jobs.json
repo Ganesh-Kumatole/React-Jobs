@@ -2,11 +2,11 @@
   "jobs": [
     {
       "id": "1",
-      "title": "Senior React Developer",
-      "type": "Full-Time",
+      "title": "Junior React Developer",
+      "type": "Internship",
       "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
       "location": "Boston, MA",
-      "salary": "$70K - $80K",
+      "salary": "$50K - $60K",
       "company": {
         "name": "NewTek Solutions",
         "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
@@ -17,7 +17,7 @@
     {
       "id": "4",
       "title": "React Front-End Developer",
-      "type": "Part-Time",
+      "type": "Internship",
       "description": "Join our team as a Part-Time Front-End Developer in beautiful Pheonix, AZ. We are looking for a self-motivated individual with a passion for creating engaging user experiences. This position offers flexible hours and the opportunity to work remotely.",
       "location": "Pheonix, AZ",
       "salary": "$60K - $70K",
