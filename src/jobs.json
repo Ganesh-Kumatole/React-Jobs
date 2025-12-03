@@ -2,7 +2,7 @@
   "jobs": [
     {
       "id": "1",
-      "title": "Junior React Developer",
+      "title": "Senior React Developer",
       "type": "Internship",
       "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
       "location": "Boston, MA",
@@ -15,17 +15,17 @@
       }
     },
     {
-      "id": "4",
-      "title": "React Front-End Developer",
+      "id": "c648",
+      "title": "ThreeJS Developer",
       "type": "Internship",
-      "description": "Join our team as a Part-Time Front-End Developer in beautiful Pheonix, AZ. We are looking for a self-motivated individual with a passion for creating engaging user experiences. This position offers flexible hours and the opportunity to work remotely.",
-      "location": "Pheonix, AZ",
-      "salary": "$60K - $70K",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi praesentium\n    commodi repudiandae nostrum at, porro nisi reiciendis sed laboriosam tempora\n    fugit consequuntur corporis nesciunt blanditiis!",
+      "location": "Mumbai, Maharashtra",
+      "salary": "$100K - $125K",
       "company": {
-        "name": "Alpha Elite",
-        "description": "Alpha Elite is a dynamic startup specializing in digital marketing and web development. We are committed to fostering a diverse and inclusive workplace where creativity and innovation thrive.",
-        "contactEmail": "contact@adipisicingelit.com",
-        "contactPhone": "555-555-5555"
+        "name": "Tesla",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi praesentium\n    commodi repudiandae nostrum at, porro nisi reiciendis sed laboriosam tempora\n    fugit consequuntur corporis nesciunt blanditiis!",
+        "contactEmail": "example@gmail.com",
+        "contactPhone": "444-555-2224"
       }
     }
   ]

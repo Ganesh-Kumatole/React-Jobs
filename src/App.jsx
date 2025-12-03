@@ -4,6 +4,7 @@ import {
   Route,
   RouterProvider,
 } from 'react-router';
+import { ToastContainer, toast } from 'react-toastify';
 
 import Layout from './Layout';
 import HomePage from './pages/HomePage';
@@ -15,13 +16,20 @@ import JobForm from './components/layouts/JobForm';
 const App = () => {
   // Helpers to Add/Update/Delete Job
   async function addJob(newJob) {
-    await fetch('http://localhost:3000/jobs', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newJob),
-    });
+    try {
+      const response = await fetch('http://localhost:3000/jobs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newJob),
+      });
+      if (!response.ok) throw new Error('Post Request Failed...');
+      toast.success('New Job added successfully...');
+    } catch (err) {
+      toast.error('Adding New Job Failed...');
+      console.error(err.message);
+    }
   }
 
   async function deleteJob(id) {
@@ -30,7 +38,9 @@ const App = () => {
         method: 'DELETE',
       });
       if (!res.ok) throw new Error('Delete Request Failed...');
+      toast.success('Job Deleted successfully...');
     } catch (err) {
+      toast.error('Unable to delete this job, try again...');
       console.error(err.message);
     }
   }
@@ -45,9 +55,9 @@ const App = () => {
         body: JSON.stringify(updatedJob),
       });
       if (!response.ok) throw new Error('Update Request Failed...');
-      const data = await response.json();
-      console.log(data);
+      toast.success('Job updated successfully...');
     } catch (err) {
+      toast.error('Job updation failed, try again...');
       console.error(err.message);
     }
   }
@@ -80,6 +90,7 @@ const App = () => {
 
   return (
     <>
+      <ToastContainer />
       <RouterProvider router={router} />
     </>
   );

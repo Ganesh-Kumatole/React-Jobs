@@ -29,10 +29,10 @@ const JobForm = ({ addJob, editJob, toEdit }) => {
       setJobDesc(job.description);
       setJobSalary(job.salary);
       setJobLocation(job.location);
-      setCompanyName(job.company.name);
-      setCompanyDesc(job.company.description);
-      setCompanyEmail(job.company.contactEmail);
-      setCompanyPhone(job.company.contactPhone);
+      setCompanyName(job.company?.name);
+      setCompanyDesc(job.company?.description);
+      setCompanyEmail(job.company?.contactEmail);
+      setCompanyPhone(job.company?.contactPhone);
     }
   }, [job]);
 

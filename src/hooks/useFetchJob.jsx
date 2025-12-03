@@ -7,6 +7,12 @@ function useFetchJob(id) {
 
   // Job-Details Data fetching
   useEffect(() => {
+    if (!id) {
+      setIsFetching(false);
+      setJob({});
+      return;
+    }
+
     const fetchJob = async () => {
       try {
         const response = await fetch(`http://localhost:3000/jobs/${id}`);
