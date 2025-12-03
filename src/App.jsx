@@ -12,6 +12,8 @@ import JobsPage from './pages/JobsPage';
 import AddJobPage from './pages/AddJobPage';
 import JobDetails from './components/layouts/JobDetails';
 import JobForm from './components/layouts/JobForm';
+import NotFoundPage from './pages/NotFoundPage';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   // Helpers to Add/Update/Delete Job
@@ -83,6 +85,7 @@ const App = () => {
               <JobForm addJob={addJob} toEdit={true} editJob={editJob} />
             }
           />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </>
     )

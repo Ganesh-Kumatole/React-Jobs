@@ -35,7 +35,7 @@ const JobDetails = ({ deleteJob }) => {
 
       <section className="bg-indigo-50">
         <div className="container m-auto py-10 px-6">
-          <div className="flex justify-center items-start gap-3">
+          <div className="flex flex-col md:flex-row md:justify-center md:items-start gap-6">
             {isFetching ? (
               <ClipLoader
                 color="indigo"
@@ -46,11 +46,11 @@ const JobDetails = ({ deleteJob }) => {
               />
             ) : (
               <>
-                <main className="w-7/10">
+                <main className="w-full md:w-3/4">
                   <div className="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
                     <div className="text-gray-500 mb-4">{job.type}</div>
                     <h1 className="text-3xl font-bold mb-4">{job.title}</h1>
-                    <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start items-center gap-2">
+                    <div className="text-gray-500 mb-4 flex justify-center md:justify-start items-center gap-2">
                       <FaLocationDot color="red" />
                       <p className="text-orange-700">{job.location}</p>
                     </div>
@@ -72,7 +72,7 @@ const JobDetails = ({ deleteJob }) => {
                 </main>
 
                 {/* <!-- Sidebar --> */}
-                <aside className="w-3/10">
+                <aside className="w-full md:w-1/4 mt-6 md:mt-0">
                   {/* <!-- Company Info --> */}
                   <div className="bg-white p-6 rounded-lg shadow-md">
                     <h3 className="text-xl font-bold mb-6">Company Info</h3>

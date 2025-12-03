@@ -8,7 +8,7 @@ const JobCard = (props) => {
 
   return (
     <>
-      <div className="bg-white rounded-xl shadow-md relative">
+      <div className="bg-white rounded-xl shadow-md relative self-start">
         <div className="p-4">
           <div className="mb-6">
             <div className="text-gray-600 my-2">{type}</div>

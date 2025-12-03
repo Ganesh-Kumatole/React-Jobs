@@ -26,7 +26,7 @@ const JobListings = ({ onHomePage }) => {
               data-testid="loader"
             />
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
               {onHomePage
                 ? recentJobs.map(
                     ({ id, type, title, description, salary, location }) => (
